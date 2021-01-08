@@ -2,7 +2,7 @@
 // A basic to-do-app
 // email: lguzm038@uottawa.ca
 
-const argv = require("yargs").argv;
+const argv = require("./yargs/yargs").argv;
 
 //for debug purposes
 console.log(argv);
