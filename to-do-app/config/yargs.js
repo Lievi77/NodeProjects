@@ -1,35 +1,30 @@
 //This file defines the commands for our to-do app
 
+const description = {
+  alias: "d",
+  demand: true,
+  //description of the command description
+  desc: "To-do's description",
+};
+
+const completed = {
+  alias: "c",
+  default: true, //default value of the command
+  desc: "New To-do's completed status",
+};
+
 //we define the options of each command first, note that list does not have any opts
 const createOpts = {
-  description: {
-    alias: "d",
-    demand: true,
-    //description of the command description
-    desc: "To-do's description",
-  },
+  description,
 };
 
 const updtOpts = {
-  description: {
-    alias: "d",
-    demand: true,
-    //description of the command description
-    desc: "To-do's description to update",
-  },
-  completed: {
-    alias: "c",
-    default: true, //default value of the command
-    desc: "New To-do's completed status",
-  },
+  description,
+  completed,
 };
 
 const deleteOpts = {
-  description: {
-    alias: "d",
-    demand: true,
-    desc: "To-do's description to delet",
-  },
+  description,
 };
 
 /*
@@ -37,6 +32,8 @@ Defining the commands using yargs. Valid commands will be:
 
 create -d my_description
 update -d my_description -c true/false
+list
+delete -d my_description 
 
 */
 const argv = require("yargs")
