@@ -47,6 +47,15 @@ const loadDb = () => {
   //console.log("loaded successfully:", listToDos);
 };
 
+/*
+Getter that returns the list of to-do tasks
+*/
+const getListing = () => {
+  loadDb();
+  return listToDos;
+};
+
 module.exports = {
   create,
+  getListing,
 };
