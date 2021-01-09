@@ -56,6 +56,8 @@ const getListing = () => {
 /*
 Updates the completed status of a specific task
 Returns true if the update was successfull, false otherwise
+@param descriptionToFind the description of the task to update
+@param newCompleted the new completed status to assign
 */
 const updateStatus = (descriptionToFind, newCompleted = true) => {
   loadDb();
@@ -72,8 +74,30 @@ const updateStatus = (descriptionToFind, newCompleted = true) => {
   return false;
 };
 
+/* 
+Deletes a particular task and returns true if successfull, false otherwise .
+@param description the description of the task to delete
+*/
+const deleteTask = (description) => {
+  loadDb();
+
+  let index = listToDos.findIndex(
+    (task) => task.description === description //true if we have a description match
+    /*NOTE: a === returns true if the items are EXACTLY equal in content */
+  );
+
+  //we will use the splice strategy to delete an array item
+  if (index > -1) {
+    listToDos.splice(index, 1);
+    saveToDB();
+    return true;
+  }
+
+  return false;
+};
 module.exports = {
   create,
   getListing,
   updateStatus,
+  deleteTask,
 };

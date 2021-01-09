@@ -6,7 +6,7 @@ const createOpts = {
     alias: "d",
     demand: true,
     //description of the command description
-    desc: "Displays to-do's description",
+    desc: "To-do's description",
   },
 };
 
@@ -15,12 +15,20 @@ const updtOpts = {
     alias: "d",
     demand: true,
     //description of the command description
-    desc: "Displays to-do's description",
+    desc: "To-do's description to update",
   },
   completed: {
     alias: "c",
     default: true, //default value of the command
-    desc: "Value of the the to-do's completed status",
+    desc: "New To-do's completed status",
+  },
+};
+
+const deleteOpts = {
+  description: {
+    alias: "d",
+    demand: true,
+    desc: "To-do's description to delet",
   },
 };
 
@@ -35,6 +43,7 @@ const argv = require("yargs")
   .command("create", "Creates a new to-do", createOpts)
   .command("update", "Updates a to-do's status", updtOpts)
   .command("list", "Lists all to-dos")
+  .command("delete", "Deletes a task", deleteOpts)
   .help().argv;
 
 //exporting the command using an object strategy

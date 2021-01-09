@@ -35,7 +35,12 @@ switch (command) {
     break;
   case "update":
     let updated = toDos.updateStatus(argv.description, argv.completed);
-    console.log("Updated:", updated);
+    console.log("Update was successfull:", updated);
+    break;
+
+  case "delete":
+    let deleted = toDos.deleteTask(argv.description);
+    console.log("Delete was successful:", deleted);
     break;
   default:
     console.log("Unrecognized command");
