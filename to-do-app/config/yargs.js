@@ -1,6 +1,6 @@
 //This file defines the commands for our to-do app
 
-//we define the options of each command first
+//we define the options of each command first, note that list does not have any opts
 const createOpts = {
   description: {
     alias: "d",
@@ -9,8 +9,6 @@ const createOpts = {
     desc: "Displays to-do's description",
   },
 };
-
-const listOpts = {};
 
 const updtOpts = {
   description: {
@@ -36,7 +34,7 @@ update -d my_description -c true/false
 const argv = require("yargs")
   .command("create", "Creates a new to-do", createOpts)
   .command("update", "Updates a to-do's status", updtOpts)
-  .command("list", "Lists all to-dos", listOpts)
+  .command("list", "Lists all to-dos")
   .help().argv;
 
 //exporting the command using an object strategy

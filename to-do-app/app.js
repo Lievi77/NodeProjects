@@ -17,7 +17,7 @@ const printListing = (list) => {
   for (let task of list) {
     console.log("=======TO-DO==========".green);
     console.log(task.description);
-    console.log("Completed Status:", task.completed);
+    console.log("Completed:", task.completed);
     console.log("======================".green);
   }
 };
@@ -31,10 +31,11 @@ switch (command) {
     break;
   case "create":
     let task = toDos.create(argv.description);
-    console.log(task);
+    console.log("Created the following to-do:", task);
     break;
   case "update":
-    console.log("Update a to-do");
+    let updated = toDos.updateStatus(argv.description, argv.completed);
+    console.log("Updated:", updated);
     break;
   default:
     console.log("Unrecognized command");

@@ -15,15 +15,13 @@ const create = (description) => {
     completed: false, //default value of a new todo is always false
   };
   listToDos.push(todo);
-
   saveToDB();
 
-  //return to-do to signalize that the task was created successfully
-  return todo;
+  return todo; //return to-do to signalize that the task was created successfully
 };
 
 /*
-Saves tasks in listToDos to our database located at ./database/database.json
+Saves tasks in listToDos to our database located at ./database/data.json
 */
 const saveToDB = () => {
   let data = JSON.stringify(listToDos); //parses data to a valid JSON
@@ -55,7 +53,27 @@ const getListing = () => {
   return listToDos;
 };
 
+/*
+Updates the completed status of a specific task
+Returns true if the update was successfull, false otherwise
+*/
+const updateStatus = (descriptionToFind, newCompleted = true) => {
+  loadDb();
+  let index = listToDos.findIndex(
+    (task) => task.description === descriptionToFind //true if we have a description match
+    /*NOTE: a === returns true if the items are EXACTLY equal in content */
+  );
+
+  if (index > -1) {
+    listToDos[index].completed = newCompleted;
+    saveToDB();
+    return true;
+  }
+  return false;
+};
+
 module.exports = {
   create,
   getListing,
+  updateStatus,
 };
