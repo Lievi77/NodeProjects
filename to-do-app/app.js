@@ -3,14 +3,13 @@
 // email: lguzm038@uottawa.ca
 
 //yargs
-const argv = require("./yargs/yargs").argv;
+const argv = require("./config/yargs").argv;
 
 //to-do create function
-
-const toDos = require("./to-do/to-do");
+const toDos = require("./logic/to-do");
 
 //for debug purposes
-console.log(argv);
+console.log("yargs debug =", argv);
 
 let command = argv._[0];
 

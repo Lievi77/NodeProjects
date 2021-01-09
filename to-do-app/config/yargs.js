@@ -26,6 +26,13 @@ const updtOpts = {
   },
 };
 
+/*
+Defining the commands using yargs. Valid commands will be:
+
+create -d my_description
+update -d my_description -c true/false
+
+*/
 const argv = require("yargs")
   .command("create", "Creates a new to-do", createOpts)
   .command("update", "Updates a to-do's status", updtOpts)
