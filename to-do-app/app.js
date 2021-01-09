@@ -5,18 +5,18 @@
 //yargs
 const argv = require("./config/yargs").argv;
 
-//to-do create function
+//to-dos logic (create/update) functions
 const toDos = require("./logic/to-do");
 
 //for debug purposes
 console.log("yargs debug =", argv);
 
+//command retrieval
 let command = argv._[0];
 
 //switch to determine the command introduced by the user
 switch (command) {
-  /* The supported commands are "list", "create", update
-   */
+  // The supported commands are "list", "create", "update"
   case "list":
     console.log("List all to-dos");
     break;
