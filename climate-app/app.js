@@ -4,6 +4,8 @@ API USED for climate data: City Geo-Location Lookup
 @email: levcguzman77@gmail.com 
 */
 
+//Open Weather API key: f9652d32a83b0afbba83a63dee664826
+
 const argv = require("./config/yargs").argv;
 
 //for debug

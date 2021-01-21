@@ -1,5 +1,4 @@
 //Yargs command config for our climate app
-
 const generalOpts = {
   location: {
     alias: "l",
