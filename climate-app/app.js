@@ -7,7 +7,13 @@ API USED for climate data: City Geo-Location Lookup
 //example of GET call:
 //api.openweathermap.org/data/2.5/weather?id=524901&appid=YOUR_API_KEY
 
+const logic = require("./logic/logic");
+
 const argv = require("./config/yargs").argv; //usual yargs config
 
 //for debug
 //console.log(`Location argument before encoding: ${argv.location} `);
+
+logic.getPlaceLatLong(argv.location).then((ans) => {
+  console.log(ans);
+});

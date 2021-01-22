@@ -1,6 +1,9 @@
+/* File to handle all the logic (i.e. API calls and info retrieval) for our apps */
+
 const axios = require("axios"); //axios
 
-const getPlaceLatLong = (location) => {
+//* AN ASYNC METHOD ALWAYS RETURNS A JS PROMISE
+const getPlaceLatLong = async (location) => {
   const encodedURI = encodeURI(location);
   console.log(`Encoded location: ${encodedURI}`); //encodes special characters such as spaces for use in URL
 
@@ -12,18 +15,21 @@ const getPlaceLatLong = (location) => {
 
   //execute weather call
   //notice how we handle requests, promises
-  weatherReq
-    .get()
-    .then((ans) => {
-      console.log(ans.data); //status code are in the 200's
-    })
-    .catch((err) => {
-      console.log("Error!!!", err); //status codes are in the 400's
-    });
+  const ans = await weatherReq.get(); // async/await functions almost like in flutter
+
+  if (ans.data.cod == "404") {
+    //not found error
+    throw new Error(`City not found: ${location}`);
+  }
+
+  //extracting desired data from the response JSON
+  const data = ans.data;
+  const desiredLoc = data.name + "," + data.sys.country;
+  const lat = data.coord.lat;
+  const lon = data.coord.lon;
 
   //we will only return the latitude and longitude of the requested place
-
-  return { location, lat, lng };
+  return { desiredLoc, lat, lon };
 };
 
 module.exports = { getPlaceLatLong };
