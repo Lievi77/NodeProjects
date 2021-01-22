@@ -8,7 +8,8 @@ const generalOpts = {
   },
 };
 
-const argv = require("yargs").options(generalOpts).argv; //in this app, we do not use an intermediate command, therefore we directly pass the options
+const argv = require("yargs").options(generalOpts).argv; //in this app, we do not use an intermediate command,
+//therefore we directly pass the options
 
 module.exports = {
   argv,
