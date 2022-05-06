@@ -43,6 +43,6 @@ switch (command) {
     console.log("Delete was successful:", deleted);
     break;
   default:
-    console.log("Unrecognized command");
+    console.log(`Unrecognized command: '${command}'`);
     break;
 }
