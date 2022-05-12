@@ -3,7 +3,7 @@ const generalOpts = {
   location: {
     alias: "l",
     desc:
-      "The location where you want to retrieve the current wheather/climate",
+      "The location where you want to retrieve the current weather/climate",
     demand: true,
   },
 };
