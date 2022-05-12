@@ -1,48 +1,17 @@
-// Author: Lev C. Guzman Aparicio
-// A basic to-do-app
-// email: lguzm038@uottawa.ca
+require("colors");
+const { showMenu, pause } = require("./helpers/messages");
 
-//Required packages
-const argv = require("./config/yargs").argv;
-const colors = require("colors");
-const toDos = require("./logic/to-do"); //to-dos logic (create/update) functions
+const main = async () => {
 
-//for debug purposes
-//console.log("yargs debug =", argv);
+    let opt = '';
 
-let command = argv._[0]; //command retrieval
+    do {
+        opt = await showMenu();
 
-//helper method to help us print a listing
-const printListing = (list) => {
-  for (let task of list) {
-    console.log("=======TO-DO==========".green);
-    console.log(task.description);
-    console.log("Completed:", task.completed);
-    console.log("======================".green);
-  }
-};
-/////////////////////////////////////////
+        if (opt !== '0') await pause();
+    } while (opt !== '0');
 
-//switch to determine the command introduced by the user. list, create, update
-switch (command) {
-  case "list":
-    let list = toDos.getListing();
-    printListing(list);
-    break;
-  case "create":
-    let task = toDos.create(argv.description);
-    console.log("Created the following to-do:", task);
-    break;
-  case "update":
-    let updated = toDos.updateStatus(argv.description, argv.completed);
-    console.log("Update was successfull:", updated);
-    break;
-
-  case "delete":
-    let deleted = toDos.deleteTask(argv.description);
-    console.log("Delete was successful:", deleted);
-    break;
-  default:
-    console.log(`Unrecognized command: '${command}'`);
-    break;
 }
+
+
+main();
