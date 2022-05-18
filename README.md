@@ -1,24 +1,27 @@
 # NodeProjects
 
-A Compilation of practice projects using Node.js, Heroku, REST Server
+A Compilation of practice projects using Node.js.
+
+## Running and Installing a Project
+
+[Node.js](https://nodejs.org) and [npm](https://www.npmjs.com) are required.
+
+To install any project, simply navigate to the appropriate root folder and execute
+
+> npm install
+
+to install the project's appropriate dependencies.
+
+To execute any project simply run
+
+>npm start
 
 ## Projects
 
 ---
 
-1. node-basis: A project aimed to reinforce the understanding of the basic features of Node.js. Consists of a program that writes multiplicative tables and/or displays them through the CLI.
+1. [intro](1-intro/): Small compilation of scripts aiming at understanding Node.js call stack.  
 
-2. to-do-app : A simple CLI to-do tracking application. The app does the following:
+2. [node-basis](2-node-basis/): A small project aimed at reinforcing the understanding Node.js's core features. Consists of a CLI application that writes and reads multiplicative tables from a .txt file.
 
-   - create a new task
-   - delete a particular task
-   - list all tasks
-
-3. climate-app: A simple weather information app. This project uses the following API: ~~[City Geo-Location Lookup [DEPRECATED]](https://rapidapi.com/dev132/api/city-geo-location-lookup)~~.
-   Instead, we will use the following API instead: [Open Weather Map](https://www.openweathermap.org).
-   To fecth the REST API, we will use axios instead of request. Since the focus of this little app is to master JS promises.
-
-## Running any project
-
-- On the root of each project, run `npm install`
-- Execute
+3. [To-Do-App](3-To-Do-App/): A small, sleek and simple CLI application that keeps track of multiple tasks' status.
