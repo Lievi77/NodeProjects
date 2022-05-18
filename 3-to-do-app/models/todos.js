@@ -24,6 +24,18 @@ class Todos {
 
     }
 
+    //getter
+    get listArray() {
+
+        const array = []
+
+        Object.keys(this._list).forEach(key => {
+            array.push(this._list[key]);
+        });
+
+        return array;
+    }
+
 }
 
 module.exports = Todos;
