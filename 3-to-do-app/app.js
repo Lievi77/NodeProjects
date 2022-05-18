@@ -9,9 +9,8 @@ const main = async () => {
     const todos = new Todos();
 
     do {
-
+        //print menu
         opt = await inquirerMenu();
-        console.log({ opt });
 
         switch (opt) {
             case '1':
@@ -22,7 +21,7 @@ const main = async () => {
                 break;
 
             case '2':
-                console.log(todos._list);
+                console.log(todos.listArray);
                 break;
             default:
                 break;
