@@ -14,13 +14,13 @@ to install the project's appropriate dependencies.
 
 To execute any project simply run
 
->npm start
+> node app
 
 ## Projects
 
 ---
 
-1. [intro](1-intro/): Small compilation of scripts aiming at understanding Node.js call stack.  
+1. [intro](1-intro/): Small compilation of scripts aiming at understanding Node.js call stack. **Does not use npm**.
 
 2. [node-basis](2-node-basis/): A small project aimed at reinforcing the understanding Node.js's core features. Consists of a CLI application that writes and reads multiplicative tables from a .txt file.
 
