@@ -14,19 +14,21 @@ const main = async () => {
 
         switch (opt) {
             case '1':
-                //create task
-                //request input via require
+                //create todos
+                //request input via inquirer
                 const desc = await readInput('Enter a description:');
                 todos.createTodo(desc);
                 break;
 
             case '2':
+                //list all todos
                 console.log(todos.listArray);
                 break;
             default:
                 break;
         }
 
+        //pause to prevent program continuation
         await pause();
 
     } while (opt !== '0');

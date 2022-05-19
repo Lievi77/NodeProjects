@@ -8,6 +8,8 @@ const Todo = require("./todo");
  * {
  * <uuid>  : <todo-object>
  * }
+ * 
+ * However, a list is needed to display the tasks to the user
  */
 
 class Todos {
