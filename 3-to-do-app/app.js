@@ -1,5 +1,6 @@
 require("colors");
 const { inquirerMenu, pause, readInput } = require("./helpers/inquirer");
+const { saveData } = require("./helpers/saveFile");
 const Todo = require("./models/todo");
 const Todos = require("./models/todos");
 
@@ -27,6 +28,8 @@ const main = async () => {
             default:
                 break;
         }
+
+        saveData(todos.listArray);
 
         //pause to prevent program continuation
         await pause();
