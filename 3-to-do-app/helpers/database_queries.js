@@ -18,12 +18,7 @@ const readData = () => {
 
     const data = JSON.parse(info);
 
-    console.log(data);
-
-
     return data;
-
-
 }
 
 module.exports = { saveData, readData }; 

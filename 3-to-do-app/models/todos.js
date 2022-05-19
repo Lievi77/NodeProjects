@@ -19,6 +19,14 @@ class Todos {
         this._list = {}; //need to use this. when defining and referencing instance variables
     }
 
+    loadTodosFromArray(todos = []) {
+
+        todos.forEach(todo => {
+            this._list[todo.id] = todo;
+        });
+
+    }
+
     createTodo(desc = '') {
         const todo = new Todo(desc);
 

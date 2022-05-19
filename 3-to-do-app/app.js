@@ -11,10 +11,11 @@ const main = async () => {
 
     const todos_db = readData(); //array of todos
 
-    if (todos_db) {
-    }
 
-    await pause();
+    if (todos_db) {
+        //we have todos from the database
+        todos.loadTodosFromArray(todos_db);
+    }
 
     do {
         //print menu
