@@ -1,6 +1,6 @@
 require("colors");
 const { inquirerMenu, pause, readInput } = require("./helpers/inquirer");
-const { saveData } = require("./helpers/saveFile");
+const { saveData, readData } = require("./helpers/database_queries");
 const Todo = require("./models/todo");
 const Todos = require("./models/todos");
 
@@ -8,6 +8,13 @@ const main = async () => {
 
     let opt = '';
     const todos = new Todos();
+
+    const todos_db = readData(); //array of todos
+
+    if (todos_db) {
+    }
+
+    await pause();
 
     do {
         //print menu
