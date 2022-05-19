@@ -31,7 +31,17 @@ const main = async () => {
 
             case '2':
                 //list all todos
-                console.log(todos.listArray);
+                todos.listTodos();
+                break;
+
+            case '3':
+                //list completed todos
+                todos.listFilteredTodos(true);
+                break;
+
+            case '4':
+                //list pending todos
+                todos.listFilteredTodos(false);
                 break;
             default:
                 break;
